@@ -1,0 +1,2920 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 36,
+  "iteration": 1673361916780,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "id": 17,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "null as zero",
+      "nullText": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "stack": false,
+      "steppedLine": false,
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) / sum(kube_pod_container_resource_requests{ resource=\"cpu\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,80",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU Utilisation (from requests)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 41,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "null as zero",
+      "nullText": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "stack": false,
+      "steppedLine": false,
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) / sum(kube_pod_container_resource_limits{cluster=\"$cluster\", resource=\"cpu\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,80",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU Utilisation (from limits)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 43,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "null as zero",
+      "nullText": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "stack": false,
+      "steppedLine": false,
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\",container!=\"\", image!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) \n/ \nsum(kube_pod_container_resource_requests{cluster=\"$cluster\", resource=\"memory\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,80",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memory Utilisation (from requests)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 45,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "null as zero",
+      "nullText": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "stack": false,
+      "steppedLine": false,
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\",container!=\"\", image!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) \n/\nsum(kube_pod_container_resource_limits{cluster=\"$cluster\", resource=\"memory\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,80",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memory Utilisation (from limits)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "quota - requests",
+          "color": "#F2495C",
+          "dashes": true,
+          "fill": 0,
+          "hiddenSeries": true,
+          "hideTooltip": true,
+          "legend": true,
+          "linewidth": 2,
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\")) by (pod)",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "scalar(kube_resourcequota{type=\"hard\",resource=\"requests.cpu\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "quota - requests",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "scalar(kube_resourcequota{ type=\"hard\",resource=\"limits.cpu\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "quota - limits",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Usage",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "CPU",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "columns": [],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 47,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "pageSize": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "hidden"
+        },
+        {
+          "alias": "CPU Usage",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "CPU Requests",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "CPU Requests %",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "percentunit"
+        },
+        {
+          "alias": "CPU Limits",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "CPU Limits %",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "percentunit"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "d/6581e46e4e5c7ba40a07646395ef7b23/k8s-resources-pod?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(cluster:namespace:pod_cpu:active:kube_pod_container_resource_requests{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod) / sum(cluster:namespace:pod_cpu:active:kube_pod_container_resource_requests{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "C",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(cluster:namespace:pod_cpu:active:kube_pod_container_resource_limits{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "D",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod) / sum(cluster:namespace:pod_cpu:active:kube_pod_container_resource_limits{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "E",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU Quota",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transform": "table",
+      "type": "table-old",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "quota - requests",
+          "color": "#F2495C",
+          "dashes": true,
+          "fill": 0,
+          "hiddenSeries": true,
+          "hideTooltip": true,
+          "legend": true,
+          "linewidth": 2,
+          "stack": false
+        },
+        {
+          "alias": "quota - limits",
+          "color": "#FF9830",
+          "dashes": true,
+          "fill": 0,
+          "hiddenSeries": true,
+          "hideTooltip": true,
+          "legend": true,
+          "linewidth": 2,
+          "stack": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_working_set_bytes{container!=\"\", image!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "scalar(kube_resourcequota{cluster=\"$cluster\", type=\"hard\",resource=\"requests.memory\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "quota - requests",
+          "legendLink": null,
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "scalar(kube_resourcequota{cluster=\"$cluster\", type=\"hard\",resource=\"limits.memory\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "quota - limits",
+          "legendLink": null,
+          "refId": "C",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Memory Usage (w/o cache)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "columns": [],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 19,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "pageSize": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "hidden"
+        },
+        {
+          "alias": "Memory Usage",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Memory Requests",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Memory Requests %",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "percentunit"
+        },
+        {
+          "alias": "Memory Limits",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Memory Limits %",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "percentunit"
+        },
+        {
+          "alias": "Memory Usage (RSS)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #F",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Memory Usage (Cache)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #G",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Memory Usage (Swap)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #H",
+          "thresholds": [],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "d/6581e46e4e5c7ba40a07646395ef7b23/k8s-resources-pod?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\",container!=\"\", image!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(cluster:namespace:pod_memory:active:kube_pod_container_resource_requests{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\",container!=\"\", image!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod) \n/ \nsum(cluster:namespace:pod_memory:active:kube_pod_container_resource_requests{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "C",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(cluster:namespace:pod_memory:active:kube_pod_container_resource_limits{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "D",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\",container!=\"\", image!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod) \n/ \nsum(cluster:namespace:pod_memory:active:kube_pod_container_resource_limits{cluster=\"$cluster\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "E",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_rss{cluster=\"$cluster\",container!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "F",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_cache{cluster=\"$cluster\",container!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "G",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(container_memory_swap{cluster=\"$cluster\",container!=\"\"} * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "H",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memory Quota",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transform": "table",
+      "type": "table-old",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "columns": [],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 33
+      },
+      "id": 21,
+      "interval": "1m",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "pageSize": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "hidden"
+        },
+        {
+          "alias": "Current Receive Bandwidth",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Current Transmit Bandwidth",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Rate of Received Packets",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Received Packets Dropped",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets Dropped",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #F",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down to pods",
+          "linkUrl": "d/6581e46e4e5c7ba40a07646395ef7b23/k8s-resources-pod?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_receive_bytes_total{}[$__rate_interval] ) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_receive_packets_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "C",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "D",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "E",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "F",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current Network Usage",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transform": "table",
+      "type": "table-old",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 40
+      },
+      "hiddenSeries": false,
+      "id": 23,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Receive Bandwidth",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 40
+      },
+      "hiddenSeries": false,
+      "id": 25,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Transmit Bandwidth",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 47
+      },
+      "hiddenSeries": false,
+      "id": 27,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_receive_packets_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Rate of Received Packets",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "pps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 47
+      },
+      "hiddenSeries": false,
+      "id": 29,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Rate of Transmitted Packets",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "pps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 54
+      },
+      "hiddenSeries": false,
+      "id": 31,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Rate of Received Packets Dropped",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "pps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 54
+      },
+      "hiddenSeries": false,
+      "id": 33,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\"}[$__rate_interval]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ) by (pod)",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Rate of Transmitted Packets Dropped",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "pps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "decimals": -1,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 61
+      },
+      "hiddenSeries": false,
+      "id": 35,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "ceil(sum by(pod) (rate(container_fs_reads_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\")  \n+ \nrate(container_fs_writes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") ))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "IOPS(Reads+Writes)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 61
+      },
+      "hiddenSeries": false,
+      "id": 37,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 0,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.11",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_reads_bytes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") \n+ \nrate(container_fs_writes_bytes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{pod}}",
+          "legendLink": null,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "ThroughPut(Read+Write)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "columns": [],
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 68
+      },
+      "id": 39,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "pageSize": null,
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "showHeader": true,
+      "sort": {
+        "col": 4,
+        "desc": true
+      },
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "hidden"
+        },
+        {
+          "alias": "IOPS(Reads)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": -1,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "IOPS(Writes)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": -1,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "IOPS(Reads + Writes)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": -1,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "Throughput(Read)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Throughput(Write)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Throughput(Read + Write)",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #F",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": false,
+          "linkTooltip": "Drill down to pods",
+          "linkUrl": "d/6581e46e4e5c7ba40a07646395ef7b23/k8s-resources-pod?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_reads_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_writes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_reads_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") \n+ rate(container_fs_writes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "C",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_reads_bytes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "D",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_writes_bytes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "E",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum by(pod) (rate(container_fs_reads_bytes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\")  \n+ \nrate(container_fs_writes_bytes_total{container!=\"\", cluster=\"$cluster\"}[5m]) * on(namespace) group_left(project, namespaceName) label_replace(projects{projectName=\"$project\"}, \"namespace\", \"$1\", \"namespaceId\", \"(.+)\") )",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "F",
+          "step": 10
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current Storage IO",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transform": "table",
+      "type": "table-old",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "isNone": true,
+          "selected": true,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": null,
+        "definition": "label_values(projects{}, projectName)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Project",
+        "multi": false,
+        "name": "project",
+        "options": [
+          {
+            "isNone": true,
+            "selected": true,
+            "text": "None",
+            "value": ""
+          }
+        ],
+        "query": {
+          "query": "label_values(projects{}, projectName)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": null,
+        "definition": "label_values(kube_pod_info, cluster)",
+        "description": null,
+        "error": null,
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "cluster",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_info, cluster)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Billing UI",
+  "uid": "TkWza_c4z",
+  "version": 1
+}
